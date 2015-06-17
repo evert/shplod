@@ -3,9 +3,12 @@ body, h1, h2, h3, h4, h5, h6, img, ul, li, ol {
     margin: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: sans-serif;
-    display: flex;
     box-sizing: border-box;
     height: 100%;
 }
@@ -14,59 +17,26 @@ body {
     display: none;
 }
 
-aside {
 
-    width: 200px;
-    background: #8aa;
-    padding: 20px;
-
+body {
+    background: #f3f3f3;
 }
 
-aside section {
-
-    padding: 10px 0;
-
+body > .panel {
+    height: 100%;
 }
 
-aside section ul {
-
-    list-style: none;
-    padding-left: 10px;
-
+#login-panel {
+    display: flex;
+    justify-content: center;
 }
 
-main {
-    padding: 20px;
+#login-panel form {
+    flex: 0 0 320px;
+    background: #ccc;
 }
 
-main ul {
-    list-style: none;
-}
-
-main .author {
-
-    font-weight: bold;
-
-}
-
-main img {
-    border-radius: 3px;
-    float: left;
-    padding: 0 10px 0 0;
-}
-
-main time {
-
-    color: #ccc;
-    font-size: 80%;
-
-}
-
-main li {
-    padding: 10px 0 10px 0;
-}
-
-main div {
-    padding: 3px 0 3px 0;
-    min-height: 50px;
+#login-panel img {
+    display: block;
+    margin: 0 auto;
 }
