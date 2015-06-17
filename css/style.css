@@ -14,7 +14,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 
@@ -26,17 +26,29 @@ body > .panel {
     height: 100%;
 }
 
-#login-panel {
+#loader-panel img {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.panel {
     display: flex;
     justify-content: center;
 }
 
-#login-panel form {
+.panel .slim-container {
     flex: 0 0 320px;
     background: #ccc;
+}
+
+#login-panel h1 {
+    padding-bottom: 20px;
 }
 
 #login-panel img {
     display: block;
     margin: 0 auto;
+    padding: 20px;
 }

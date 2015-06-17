@@ -17,21 +17,30 @@
 <body>
 
     <div class="panel" id="loader-panel">
-        Loading...
+        <div class="slim-container">
+            <span class="message">
+            Loading...
+            </span>
+            <img src="img/flower200.gif" />
+        </div>
     </div>
 
     <div class="panel hidden" id="login-panel">
-        <form>
+        <form class="slim-container">
             <h1>Shplod</h1>
             <label>JID</label>
-            <input type="text" name="jid" placeholder="user@example.org" />
+            <input type="email" name="jid" placeholder="user@example.org" required />
+            <br />
             <label>Password</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" required />
+            <br />
             <label>BOSH url</label>
-            <input type="text" name="boshURL" value="http://localhost:5280/http-bin" />
+            <input type="text" name="boshURL" value="http://localhost:5280/http-bind" />
+
+            <button>Login</button>
 
             <br />
-            <img src="flowerstatic.gif" />
+            <img src="img/flowerstatic.gif" />
         </form>
     </div>
 
