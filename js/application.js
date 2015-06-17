@@ -39,6 +39,7 @@ Shplod.View.Application = Backbone.View.extend({
         var client = XMPP.createClient(clientOptions);
         client.on('*', this.debug.bind(this));
         client.on('auth:failed', this.authFailed.bind(this));
+        client.on('session:started', this.sessionStarted.bind(this));
         client.connect();
 
         this.client = client;
@@ -61,6 +62,37 @@ Shplod.View.Application = Backbone.View.extend({
     authFailed : function() {
 
         this.loaderMessage('Authentication failed!');
+
+    },
+
+    sessionStarted : function() {
+
+        var self = this;
+        this.client.getRoster(function(err, resp) {
+            self.client.updateCaps();
+            self.client.sendPresence({
+                caps: self.client.disco.caps
+            });
+            self.parseRoster(resp.roster);
+        });
+
+    },
+
+    parseRoster : function(roster) {
+
+        this.showPanel('chat');
+        var people = roster.items;
+        var buddyDom = document.getElementById('buddylist');
+        var groupDom = document.getElementById('grouplist');
+        for(var i=0; i < people.length; i++) {
+            var item = people[i];
+            if (item.groups) {
+                groupDom.innerHTML+="<li>#" + item.groups[0] + "</li>";
+            } else  {
+                buddyDom.innerHTML+="<li>" + item.name + "</li>";
+            }
+
+        }
 
     },
 
