@@ -52,3 +52,18 @@ body > .panel {
     margin: 0 auto;
     padding: 20px;
 }
+
+#chat-panel {
+    display: flex;
+    width: 100%;
+}
+
+#chat-panel aside {
+    min-width: 300px;
+    height: 100%;
+    overflow-y: scroll;
+}
+#chat-panel main {
+    flex: 1;
+
+}

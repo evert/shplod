@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 
+    <link rel="stylesheet" type="text/css" href="mdl/material.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <meta charset="utf-8">
@@ -9,12 +10,13 @@
     <script src="js/vendor/underscore-min.js"></script>
     <script src="js/vendor/backbone-min.js"></script>
     <script src="js/vendor/stanzaio.bundle.js"></script>
+    <script src="mdl/material.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/application.js"></script>
 
 </head>
 
-<body>
+<body class="mdl-layout mdl-layout-js">
 
     <div class="panel" id="loader-panel">
         <div class="slim-container">
@@ -28,16 +30,16 @@
     <div class="panel hidden" id="login-panel">
         <form class="slim-container">
             <h1>Shplod</h1>
-            <label>JID</label>
-            <input type="email" name="jid" placeholder="user@example.org" required />
+            <label class="mdl-textfield__label" for="email">JID</label>
+            <input type="email" name="jid" placeholder="user@example.org" required class="mdl-textfield__input" />
             <br />
             <label>Password</label>
             <input type="password" name="password" required />
             <br />
             <label>BOSH url</label>
-            <input type="text" name="boshURL" value="http://localhost:5280/http-bind" />
+            <input type="text" name="boshURL" value="http://localhost:5280/http-bind" class="mdl-textfield__input" />
 
-            <button>Login</button>
+            <button class="mdl-button mdl-button--raised">Login</button>
 
             <br />
             <img src="img/flowerstatic.gif" />
